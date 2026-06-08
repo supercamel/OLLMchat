@@ -144,8 +144,9 @@ if get_option('docs')
   subdir('docs')             # Depends on all source files
 endif
 
-# Post-install script to update icon cache and desktop database
+# Post-install script to update icon cache and desktop database when the host
+# tools are available. Minimal CI/package builders may not install both.
 gnome.post_install(
-  gtk_update_icon_cache: true,
-  update_desktop_database: true
+  gtk_update_icon_cache: find_program('gtk-update-icon-cache', required: false).found(),
+  update_desktop_database: find_program('update-desktop-database', required: false).found()
 )
