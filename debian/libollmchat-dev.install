@@ -1,7 +1,8 @@
-usr/share/vala/vapi/ollmchat.vapi
-usr/share/vala/vapi/ollmchatgtk.vapi
 usr/share/vala/vapi/ocsqlite.vapi
-usr/share/vala/vapi/ocsqlite-meson.vapi
-usr/include/ollmchat.h
-usr/include/ollmchatgtk.h
-usr/include/ocsqlite.h
+usr/share/vala/vapi/ocrpc.vapi
+usr/share/vala/vapi/ollamaweb.vapi
+usr/share/vala/vapi/ocfiles.vapi
+usr/share/vala/vapi/ocmcp.vapi
+usr/share/vala/vapi/octools.vapi
+usr/share/vala/vapi/ocvector.vapi
+usr/share/vala/vapi/occoder.vapi

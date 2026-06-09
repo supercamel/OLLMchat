@@ -1,2 +1,6 @@
 usr/bin/oc-md2html
 usr/bin/oc-html2md
+usr/bin/oc-diff
+usr/bin/oc-vala-ternary-bug
+usr/bin/oc-vector-index
+usr/bin/oc-vector-search
