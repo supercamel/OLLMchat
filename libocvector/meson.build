@@ -245,6 +245,7 @@ ocvector_vapi = custom_target('ocvector-vapi',
     '--vapidir', meson.current_build_dir() / '..' / 'libollmchat',
     '--vapidir', meson.current_build_dir() / '..' / 'libollamaweb',
     '--vapidir', '/usr/share/vala/vapi',  # System VAPI directory (last, so local takes priority)
+  ] + sqgi_vala_args + [
     '--pkg', 'posix',
     '--pkg', 'sqlite3',
     '--pkg', 'json-glib-1.0',
@@ -276,9 +277,9 @@ ocvector_vapi = custom_target('ocvector-vapi',
 # The custom_target ensures ocvector.vapi exists and is found via --pkg=ocvector, but we don't
 # include it in sources to avoid conflicts when linking with the library directly.
 ocvector_vapi_dep = declare_dependency(
-  link_args: ['-L' + meson.current_build_dir(), '-locvector'],
+  link_args: ['-L' + meson.current_build_dir(), '-locvector'] + ocvector_link_args,
   sources: [ocvector_vapi[0]],  # Include VAPI file to ensure it's built first
-  dependencies: [ocsqlite_vapi_dep, ollmchat_vapi_dep, ocfiles_vapi_dep, ocvector_link_dep]
+  dependencies: [ocsqlite_vapi_dep, ollmchat_vapi_dep, ocfiles_vapi_dep]
 )
 
 # GObject Introspection for ocvector library

@@ -30,6 +30,9 @@ add_project_arguments(['--vapidir', meson.current_source_dir() / 'vapi'], langua
 add_project_arguments(['--vapidir', meson.current_source_dir() / '../vapi'], language: 'vala')
 add_project_arguments(['--vapidir', meson.current_build_dir()], language: 'vala')  # Add build dir for generated VAPIs
 add_project_arguments(['--target-glib=auto'], language: 'vala')
+if host_machine.system() == 'windows'
+  add_project_arguments(['--define=G_OS_WIN32'], language: 'vala')
+endif
 
 sqgi_vala_args = []
 
